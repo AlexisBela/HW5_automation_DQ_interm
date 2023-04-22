@@ -3,7 +3,7 @@ import pymssql
 
 class DBChecker:
     def __init__(self):
-        self.server = '127.0.0.1'
+        self.server = 'host.docker.internal' # '127.0.0.1'
         self.database = 'AdventureWorksDW2012'
         self.username = 'Alexa1'
         self.password = 'sasha$dataQuality*2567_helloO'

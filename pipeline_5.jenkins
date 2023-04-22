@@ -16,4 +16,9 @@ pipeline {
 	        sh 'python3 test_checks_sasha.py'
         }
     }
+    stage('save report to repo') {
+        steps{
+
+        }
+    }
 }

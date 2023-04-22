@@ -4,7 +4,7 @@ import pymssql
 class DBChecker:
     def __init__(self):
         self.server = 'localhost'
-        self.database = 'AdventureWorksDW2012'
+        self.database = 'TRN'
         self.username = 'Alexa1'
         self.password = 'sasha$dataQuality*2567_helloO'
         self.driver = '{SQL Server}'

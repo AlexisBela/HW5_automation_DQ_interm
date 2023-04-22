@@ -1,17 +1,24 @@
 pipeline {
-   agent any
-
-   stages {
-	stage('install req') {
+    agent any
+    stage('Build') {
+        steps {
+          echo 'Building...'
+          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
+        }
+    }
+    stage('Install requirements') {
 		steps {
 	  		sh 'pip install -r requirements.txt'
 		}
 	}
-      stage('run tests') {
+	stage('Run tests') {
+	    steps{
+	        sh 'python3 test_checks_sasha.py'
+        }
+    }
+    stage('save report to repo') {
         steps{
-          sh 'python3 test_checks_sasha.py'
-        }
-        }
 
-  }
+        }
+    }
 }
